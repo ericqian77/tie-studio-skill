@@ -1,8 +1,9 @@
 # Start with TIE Studio
 
 TIE Studio helps you clarify a consequential decision using project evidence, alternatives
-and focused questions. It runs inside Codex; it does not require a hosted model API.
-This private review snapshot targets Codex. Other hosts have not passed equivalent acceptance.
+and focused questions. The method is intended for use across AI coding agents; it does not require an added
+hosted model API. This version supplies the Codex adaptation. Claude Code, Cursor and
+other compatible hosts are intended future targets, not supported paths in this guide.
 
 ## Install in a disposable project
 
@@ -10,7 +11,7 @@ This private review snapshot targets Codex. Other hosts have not passed equivale
    into a new directory:
 
    ```sh
-   git clone --branch review-2026.09.07.1 --single-branch https://github.com/ericqian77/tie-studio-skill.git tie-studio-review
+   git clone --branch review-2026.09.07.2 --single-branch https://github.com/ericqian77/tie-studio-skill.git tie-studio-review
    ```
 
    Inspect `README.md`, `LICENSE`, `MANIFEST.json` and `tie-studio/SKILL.md` before installing.

@@ -1,10 +1,10 @@
 {
-  "candidate": "2026.09.07-review.1",
+  "candidate": "2026.09.07-review.2",
   "files": {
     "EXAMPLE.md": "d91f61d40455d97b560a29fd7a5284379103c9b8090c24573f68e3fece312aaa",
     "LICENSE": "5295ac19378d6c39e350772ac7c925469b8ef024fa994ae1dbca06b132eb2506",
-    "README.md": "8df10f123542995d0b70e4ab5876f75316b4b50c98107cf2344973888d9bcede",
-    "START_HERE.md": "56630be331e41393ea126d96ef87f0bc8a3e767563b2c3fddea0d7188d0ff181",
+    "README.md": "99359540bf46dd4361a88d469388826e88b46afe2a651146f6f3c76e00e48715",
+    "START_HERE.md": "adf1e4114a9e6cb533880ec9ef129014b44572d5594ee4a770720f4adbd44f1f",
     "tie-studio/SKILL.md": "849f4eb691d52df6aebc743033a3d4c65517a0a17418f2f46fe79b6048998d4d",
     "tie-studio/agents/openai.yaml": "b15e581ab20307714b002d8dd886174dcdfa4ee6c0410ec473d58f3d87e2e9a9",
     "tie-studio/assets/blueprint.template.md": "55de63a5fbf39b8e89e3ccc4c5d4e5e9c4c6ac292f3b60b57ea795aa0fc89d60",

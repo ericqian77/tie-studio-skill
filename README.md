@@ -1,6 +1,7 @@
 # TIE Studio
 
-A Codex-first Skill for forming consequential judgments from Taste, Intent and Eval.
+A portable decision method and Skill for AI coding agents, built around Taste, Intent
+and Eval.
 Start from project evidence, compare useful alternatives, preserve uncertainty, and
 carry decisions across tasks before authorizing substantial execution.
 
@@ -8,16 +9,28 @@ carry decisions across tasks before authorizing substantial execution.
 snapshot for owner review and installation experiments. Public release is pending.
 
 - Skill version: **2026.09.06.2**
-- Distribution snapshot: **2026.09.07-review.1**
-- Installation ref: **review-2026.09.07.1**
+- Distribution snapshot: **2026.09.07-review.2**
+- Installation ref: **review-2026.09.07.2**
 - License: [MIT](LICENSE)
+
+## Product direction and current host support
+
+TIE Studio is designed to work across AI coding agents, with Codex, Claude Code,
+Cursor and other compatible agent hosts as intended integration targets. The decision
+method and project records are intended to remain portable; each host needs its own
+installation, invocation and tool-permission adaptation.
+
+**This version provides the Codex adaptation.** Claude Code, Cursor and other hosts
+are future compatibility targets, not supported installations promised by this snapshot.
+Existing compatibility experiments do not establish equivalent behavior across hosts.
+The first implementation target does not define the product's long-term identity.
 
 ## Install with Codex
 
 Give Codex this instruction in the project where you want to try the Skill:
 
 > Use the skill installer to install TIE Studio from repository
-> ericqian77/tie-studio-skill, path tie-studio, ref review-2026.09.07.1.
+> ericqian77/tie-studio-skill, path tie-studio, ref review-2026.09.07.2.
 > Install into this project's .agents/skills directory. Check for existing Studio
 > or Discovery installations first and do not overwrite them without a backup.
 
