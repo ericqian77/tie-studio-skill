@@ -1,0 +1,6 @@
+interface:
+  display_name: "TIE Studio"
+  short_description: "Test evidence-led judgment formation on a real idea"
+  default_prompt: "Use $tie-studio to help form the next consequential working judgment from this real idea before substantial execution."
+policy:
+  allow_implicit_invocation: false

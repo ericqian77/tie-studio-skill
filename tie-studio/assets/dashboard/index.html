@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="/*__LANG__*/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'; connect-src 'none'">
+<title>TIE Workbench</title>
+<style>/*__STYLE__*/</style>
+</head>
+<body>
+<a class="skip" href="#app">/*__SKIP__*/</a>
+<header class="appbar"><div class="brand">tie<span id="brand-label"></span></div><div class="row header-tools"><span id="project-label" class="appmeta"></span><input id="search" class="search" type="search"><button class="pill" id="about-button" data-action="about"></button></div></header>
+<div class="shell"><nav id="navigation" class="sectionnav" aria-label="/*__NAV__*/"></nav><section id="live-status" class="live-status" role="status" aria-live="polite" hidden></section><main id="app" tabindex="-1"></main></div>
+<footer id="footer" class="foot"></footer>
+<dialog id="detail" aria-label="/*__DETAIL__*/"><div class="dialogbar row between"><button class="back" data-action="back"></button><span class="eyebrow" id="detail-label"></span><button class="close" data-action="close">×</button></div><div id="detail-freshness" class="detail-freshness" hidden></div><div class="dialogbody" id="dialogcontent"></div></dialog>
+<dialog id="about" aria-labelledby="about-title"><div class="dialogbar row between"><h2 id="about-title"></h2><button class="close" data-action="close-about">×</button></div><div class="dialogbody" id="about-content"></div></dialog>
+<noscript>/*__NOSCRIPT__*/</noscript>
+<script type="application/json" id="tie-payload">/*__PAYLOAD__*/</script>
+<script>/*__SCRIPT__*/</script>
+</body>
+</html>
