@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tie:dashboard:view:1",
+  "title": "TIE dashboard private reading projection",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "uiLocale": {
+      "enum": ["en", "zh-CN"]
+    },
+    "summaryLocale": {
+      "enum": ["en", "zh-CN"]
+    },
+    "generatedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "session"
+      ],
+      "additionalProperties": false
+    },
+    "reconciliation": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "pending"
+      ]
+    },
+    "overview": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "headline",
+        "summary",
+        "scope",
+        "next",
+        "coverage"
+      ],
+      "additionalProperties": false
+    },
+    "historyCoverage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "path",
+          "sha256",
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "anchor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "anchor",
+          "start",
+          "end",
+          "excerpt"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "intent",
+              "taste",
+              "eval"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implication": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authority": {
+            "type": "string",
+            "enum": [
+              "commitment",
+              "proposal",
+              "constraint",
+              "unknown",
+              "principle"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "recorded",
+              "reported",
+              "verified",
+              "unverified"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "superseded",
+              "withdrawn",
+              "paused"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "category",
+          "title",
+          "summary",
+          "implication",
+          "scope",
+          "authority",
+          "evidence",
+          "status",
+          "citations"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "supports",
+              "constrains",
+              "evaluates",
+              "relates",
+              "revises"
+            ]
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "host",
+              "source"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "kind",
+          "basis",
+          "note",
+          "citations"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "when": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "before": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "citations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "text",
+                  "citations"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "after": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "text",
+              "citations"
+            ],
+            "additionalProperties": false
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+            },
+            "minItems": 1
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "when",
+          "title",
+          "summary",
+          "before",
+          "after",
+          "records",
+          "citations"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "uiLocale",
+    "summaryLocale",
+    "generatedAt",
+    "project",
+    "reconciliation",
+    "overview",
+    "historyCoverage",
+    "sources",
+    "citations",
+    "records",
+    "relations",
+    "events"
+  ],
+  "additionalProperties": false
+}
