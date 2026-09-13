@@ -1,79 +1,78 @@
 # TIE Studio
 
-A portable decision method and Skill for AI coding agents, built around Taste, Intent
-and Eval.
-Start from project evidence, compare useful alternatives, preserve uncertainty, and
-carry decisions across tasks before authorizing substantial execution.
+**Make consequential decisions before you build.**
 
-**Repository status: private review.** This repository is an independently packaged
-snapshot for owner review and installation experiments. Public release is pending.
+A portable decision Skill for AI coding agents, built around **Taste, Intent, and Eval**.
+Read project evidence, compare meaningful alternatives, preserve uncertainty, and carry
+accepted decisions into the next conversation. Reasoning stays in your coding agent;
+no additional hosted model service is required.
 
-- Skill version: **2026.09.06.2**
-- Distribution snapshot: **2026.09.07-review.2**
-- Installation ref: **review-2026.09.07.2**
-- License: [MIT](LICENSE)
+**Open-source preview · MIT licensed.** Choose the package for your host:
 
-## Product direction and current host support
+| Host | Package | Status | Install |
+| --- | --- | --- | --- |
+| Codex | `tie-studio/` · `2026.09.06.2` | Existing adaptation; clean-host compatibility matrix incomplete | [Codex instructions](CODEX_INSTALL.md) |
+| Cursor | `cursor/tie-studio/` · distribution `2026.09.11-preview.1` | Preview; project discovery unresolved, conversation acceptance pending | [Cursor instructions](cursor/START_HERE.md) |
+| Claude Code | Not supplied | Planned, not validated | No installation package yet |
 
-TIE Studio is designed to work across AI coding agents, with Codex, Claude Code,
-Cursor and other compatible agent hosts as intended integration targets. The decision
-method and project records are intended to remain portable; each host needs its own
-installation, invocation and tool-permission adaptation.
+## Install through your agent
 
-**This version provides the Codex adaptation.** Claude Code, Cursor and other hosts
-are future compatibility targets, not supported installations promised by this snapshot.
-Existing compatibility experiments do not establish equivalent behavior across hosts.
-The first implementation target does not define the product's long-term identity.
+For Cursor, paste this into an Agent conversation with terminal and file access:
 
-## Install with Codex
+```text
+Install TIE Studio for Cursor from https://github.com/ericqian77/tie-studio-skill.
+Clone the repository into a new download directory outside my project and Skill
+installation directories. Record the commit and run `python3 -B verify.py` from
+its root. Then follow cursor/START_HERE.md, including package verification.
+Use a new test project, leave other host installations untouched, and tell me
+how to confirm the actual loaded Skill source. Do not install the root Codex package.
+```
 
-Give Codex this instruction in the project where you want to try the Skill:
+This is an instruction for your agent to read and execute the documented installation,
+not a marketplace installer or proof of successful Cursor discovery. If your agent
+cannot download or write files, use the [manual instructions](START_HERE.md).
+For repeatable trials, retain the downloaded commit; `main` can change.
 
-> Use the skill installer to install TIE Studio from repository
-> ericqian77/tie-studio-skill, path tie-studio, ref review-2026.09.07.2.
-> Install into this project's .agents/skills directory. Check for existing Studio
-> or Discovery installations first and do not overwrite them without a backup.
+**Known Cursor issue:** a prior local trial found the global Codex Skill instead of
+the intended project Skill. Confirm the loaded path before invoking `/tie-studio`.
+Copying files or seeing the same name is insufficient. See [acceptance evidence](cursor/ACCEPTANCE.md).
 
-The repository is private, so the installing environment needs an account with access.
-A URL alone does not grant access. See [START_HERE.md](START_HERE.md) for manual
-installation, first use, recovery, upgrade and removal.
+## Try a consequential decision
 
-After installation, explicitly invoke `$tie-studio`. For existing work:
+After confirming the correct installation, explicitly invoke the Skill (`$tie-studio`
+in Codex or `/tie-studio` in Cursor) and ask:
 
-> Use $tie-studio. Resume this project's existing TIE Session and identify the next
-> unresolved decision without reopening settled work.
+> Help me decide whether a short guide or a live workshop would better help our
+> volunteer team. Read the project evidence first. Do not implement anything yet.
 
-## What is included
+Correct the goal as you learn. Project decisions live in your project's `tie/` directory.
+In a fresh conversation, explicitly invoke the Skill and ask it to resume those records.
+These are intended behaviors; deterministic checks do not prove judgment quality or
+reliable recovery. Approval of a discussion does not authorize implementation.
 
-The complete `tie-studio/` folder includes the method instructions, four work-type
-modules, empty artifact templates, deterministic validators and an optional local
-TIE Workbench with English and Chinese interface resources. No hosted model API or
-additional model runtime is required; reasoning stays with the current Codex host.
+## Shared method, independent packages
 
-Workbench is optional and opens only when requested. Its current server implementation
-uses Python 3.9+ and POSIX file locking on macOS/Linux. Windows parity is not established.
-Project records remain in each user's own `tie/` directory.
+Both packages derive from one maintained method with separate host instructions,
+version pins, acceptance and rollback. Updating one installation does not update another.
+Host discovery can still expose same-name Skills across locations; verify their sources.
+Concurrent writes to the same project decision records are not supported.
 
-## Read and review
+The optional Codex Workbench uses Python 3.9+ and POSIX file locking; Windows parity is
+unproven. Live Workbench is disabled in the Cursor preview. Neither package requires it
+for the ordinary text workflow. Host permissions and network policies continue to apply.
 
-- [Main Skill instructions](tie-studio/SKILL.md)
-- [Discovery method](tie-studio/references/discovery.md)
-- [Decision quality and approval boundaries](tie-studio/references/decision-quality.md)
-- [Workbench instructions](tie-studio/references/dashboard.md)
+## Downloads, integrity and feedback
+
+- [Standalone Cursor ZIP](downloads/tie-studio-cursor-2026.09.11-preview.1.zip) · [SHA-256](downloads/tie-studio-cursor-2026.09.11-preview.1.zip.sha256)
 - [Synthetic correction/resume example](EXAMPLE.md)
-- [Exact payload hashes](MANIFEST.json)
+- [Repository manifest](MANIFEST.json): run `python3 -B verify.py` in a clean download.
+- [Feedback and contributions](CONTRIBUTING.md) · [MIT license](LICENSE)
 
-This distribution contains no private development history or real project records.
-The manifest covers every payload file except itself.
+The original Codex snapshot remains pinned at `review-2026.09.07.2`; its historical
+private-review wording describes that snapshot. Current repository presentation does
+not change its Skill payload. Cursor's embedded provenance also retains its original
+preview identity. A public preview is not a stable host-support claim.
 
-## Limits and maintenance
-
-Deterministic checks do not establish judgment quality or long-term reliability.
-Fresh-task continuation has needed assisted correction. Clean host-agent acceptance
-and a precise Codex client/model compatibility matrix remain unproven for this snapshot.
-Other hosts are not equally validated. Host privacy/network policies still apply.
-
-This repository is a derived release surface. Improvements are reconciled in the
-canonical development source before exporting another reviewed snapshot. Do not assume
-that main is the same as a pinned version. Accepted external contributions should retain
-attribution when incorporated. No automatic project-data collection is included.
+This is a derived distribution repository. It includes no real project decision records.
+Method changes are maintained in the development source and exported as reviewed
+packages. Public installation does not require access to that development repository.
