@@ -1,0 +1,26 @@
+name: Validate distribution
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  distribution:
+    name: Distribution checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify complete distribution and host manifests
+        run: python3 -B verify.py
+      - name: Validate Codex and Cursor templates and validator self-tests
+        run: |
+          for package in tie-studio cursor/tie-studio; do
+            python3 -B "$package/scripts/validate_artifacts.py" --self-test
+            python3 -B "$package/scripts/validate_artifacts.py" --templates "$package/assets"
+          done

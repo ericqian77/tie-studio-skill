@@ -2,8 +2,9 @@
   "base_distribution_commit": "bb36478fbe2cac5238d5188f8dc54fe1a24b9d7e",
   "distribution_version": "2026.09.13-preview.1",
   "files": {
+    ".github/workflows/validate.yml": "f316e31c32eb93513473d1fa09cf72f6f95b146bbd38d6469e2e73eb15c62701",
     "CODEX_INSTALL.md": "6b2c5d7db76a318575e4b972f7c4ba8f6f335006a35e085d431cd6c79403e653",
-    "CONTRIBUTING.md": "6abe8cee9dfff5269bd0e9a7ae71929a785572149cfebe6253df164c462c93b2",
+    "CONTRIBUTING.md": "a690bb236a8c7efcd6f59d5cd8633c67e6ded1fa5d1688a70d6ddae292c19c92",
     "EXAMPLE.md": "d91f61d40455d97b560a29fd7a5284379103c9b8090c24573f68e3fece312aaa",
     "LICENSE": "5295ac19378d6c39e350772ac7c925469b8ef024fa994ae1dbca06b132eb2506",
     "README.md": "ee3348c6788e950238a67818d9c5cee5ba0ad3ebaef65aa335ad58b49f5e89d1",
