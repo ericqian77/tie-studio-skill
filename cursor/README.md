@@ -6,7 +6,7 @@ TIE Studio is a decision Skill built around **Taste, Intent, and Eval**. It help
 clarify what you want, compare meaningful alternatives, and define what a good result
 would look like—inside the project where you work.
 
-**Preview · MIT licensed.** Package version `2026.09.11-preview.1`.
+**Preview · MIT licensed.** Package version `2026.09.13-preview.1`.
 Cursor project discovery has an unresolved issue; conversational acceptance is pending.
 Read [Compatibility and validation](ACCEPTANCE.md) before trying it.
 
@@ -49,19 +49,18 @@ Independent packages do not guarantee independent discovery: Cursor may also fin
 installed for other hosts. Confirm the actual loaded path and preserve those installations.
 Live Workbench is unavailable in this preview. The ordinary workflow is text-based.
 
-## Share this package
+## Share the GitHub link
 
-The standalone ZIP contains this guide, installation instructions, the Skill, MIT license
-and checksums. It can be handed to another user without development project records,
-private conversations or access to the development repository. Keep the license and
-validation-status documents with it. The MIT text is in [LICENSE](LICENSE).
+Share https://github.com/ericqian77/tie-studio-skill and direct Cursor users to this
+`cursor/` directory. Follow [the installation instructions](START_HERE.md) to clone,
+verify and install. Record the downloaded commit; `main` can change. Installation
+does not require access to the private development repository.
 
 No additional hosted inference service is included. The Skill runs inside the recipient's
-Cursor environment, using its model, tools and permissions. A private GitHub repository
-still requires access; distributing a ZIP does not change the repository's visibility.
+Cursor environment, using its model, tools and permissions.
 
 ## Verify and report
 
-Run `python3 -B verify.py` from the extracted package. The manifests record the exact
+Run `python3 -B verify.py` from the downloaded `cursor/` directory. The manifests record the exact
 Skill payload, source commit and file hashes. Checksums detect modifications; obtain the
 package through a source you trust. Share redacted issues using [CONTRIBUTING.md](CONTRIBUTING.md).

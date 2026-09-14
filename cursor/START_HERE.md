@@ -1,25 +1,23 @@
 # Install TIE Studio for Cursor
 
-Version `2026.09.11-preview.1`. Local macOS is the initial acceptance target.
+Version `2026.09.13-preview.1`. Local macOS is the initial acceptance target.
 **Known issue:** correct project Skill discovery is unresolved. Verify the loaded source
 before starting a conversation. See [Compatibility](ACCEPTANCE.md).
 
 ## 1. Get the package
 
-**From ZIP:** extract `tie-studio-cursor-2026.09.11-preview.1.zip` and open a terminal
-in the extracted `tie-studio-cursor` folder. The ZIP contains all installation resources.
-
-**From GitHub:** in a directory without an existing `tie-studio-cursor-download` folder:
+Clone from GitHub into a new download directory:
 
 ```sh
-git clone --branch codex/cursor-share-20260911 --single-branch https://github.com/ericqian77/tie-studio-skill.git tie-studio-cursor-download
+git clone --branch main --single-branch https://github.com/ericqian77/tie-studio-skill.git tie-studio-cursor-download
 cd tie-studio-cursor-download
 git rev-parse HEAD
+python3 -B verify.py
 cd cursor
 ```
 
-Record the printed commit if using Git. Access is required while the repository is
-private. This repository also includes a Codex package at its root; use this `cursor/`
+Record the printed commit so the downloaded version can be identified. This public
+repository also includes a Codex package at its root; use this `cursor/`
 directory for Cursor. Keep the download outside your actual project and Skill discovery roots.
 
 ## 2. Verify and install into a new project

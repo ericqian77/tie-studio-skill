@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.09.13-preview.1
+
+- Install from the public GitHub main branch; record the downloaded commit.
+- Remove standalone ZIP delivery and the retired share-branch installation dependency.
+- Skill payload unchanged; real-host acceptance remains pending.
+
 ## 2026.09.11-preview.1
 
 - Product-facing name: **TIE Studio for Cursor**.

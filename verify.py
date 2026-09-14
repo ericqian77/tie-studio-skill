@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Verify a clean repository download, including both host packages and the Cursor ZIP."""
+"""Verify a clean repository download, including both host packages."""
 import hashlib
 import json
 from pathlib import Path
 import runpy
-import zipfile
 
 
 def verify(root):
@@ -22,19 +21,6 @@ def verify(root):
     if actual != manifest['files']:
         raise ValueError('Repository has missing, extra or changed files; use a clean download')
     cursor = runpy.run_path(str(root / 'cursor/verify.py'))['verify'](root / 'cursor')
-    archive = root / 'downloads/tie-studio-cursor-2026.09.11-preview.1.zip'
-    expected = archive.with_suffix('.zip.sha256').read_text().split()[0]
-    if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
-        raise ValueError('ZIP checksum mismatch')
-    with zipfile.ZipFile(archive) as zipped:
-        entries = zipped.namelist()
-        expected_files = {p.relative_to(root / 'cursor').as_posix(): p.read_bytes()
-                          for p in (root / 'cursor').rglob('*') if p.is_file()}
-        if len(entries) != len(set(entries)) or set(entries) != {'tie-studio-cursor/' + n for n in expected_files}:
-            raise ValueError('Unexpected archive inventory')
-        for name, data in expected_files.items():
-            if zipped.read('tie-studio-cursor/' + name) != data:
-                raise ValueError('ZIP/package mismatch: ' + name)
     return {'repository_files': len(actual) + 1, 'cursor': cursor,
             'codex_payload': manifest['hosts']['codex']['version'],
             'status': 'integrity-passed; real-host acceptance is separate'}

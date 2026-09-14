@@ -117,12 +117,11 @@ parity has not been established.
 ## Cursor preview
 
 **TIE Studio for Cursor** is an independent preview, distribution version
-**2026.09.11-preview.1**. Install `cursor/tie-studio/` into a project's
+**2026.09.13-preview.1**. Install `cursor/tie-studio/` into a project's
 `.cursor/skills/tie-studio/`; do not install the root Codex package into Cursor.
 
 - [Cursor installation instructions](cursor/START_HERE.md)
 - [Compatibility and acceptance status](cursor/ACCEPTANCE.md)
-- [Standalone ZIP](downloads/tie-studio-cursor-2026.09.11-preview.1.zip) · [SHA-256](downloads/tie-studio-cursor-2026.09.11-preview.1.zip.sha256)
 
 Package checks have passed. Real Cursor discovery and conversational acceptance remain
 incomplete: a previous trial found a global Codex Skill instead of the intended project
@@ -142,7 +141,7 @@ supply validated packages for them.
 ## Verify, update and contribute
 
 Run `python3 -B verify.py` from a clean repository download to check the
-[repository manifest](MANIFEST.json), host-package integrity and Cursor ZIP. Keep the
+[repository manifest](MANIFEST.json), both host packages. Keep the
 commit used for installation: `main` can change, while the pinned Codex tag remains available.
 Historical snapshot wording describes those snapshots, not the current repository's visibility.
 

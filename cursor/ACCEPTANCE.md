@@ -6,7 +6,7 @@ Use synthetic evidence. Structure and successful installation are not behavioral
 
 ## Current status
 
-Distribution `2026.09.11-preview.1` changes presentation and packaging only. Its 28 Skill
+Distribution `2026.09.13-preview.1` switches installation to GitHub main only. Its 28 Skill
 files are identical to the previously checked `2026.09.07-cursor-candidate.1` payload.
 The internal payload identifier is retained for traceability, not used as the product name.
 
