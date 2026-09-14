@@ -16,3 +16,13 @@ contributor attribution and the MIT license when incorporating accepted changes.
 
 Public availability does not establish host acceptance. Cursor's discovery and dialogue
 checks remain pending; consult [its acceptance protocol](cursor/ACCEPTANCE.md).
+
+Changes reach `main` through pull requests. The maintainer merges after the required
+Distribution checks pass and review conversations are resolved, using squash merge.
+Merged branches are deleted automatically. A second-person approval is not required
+while this project has one maintainer. Outside contributors can fork this repository
+and open a pull request; public visibility does not grant write or merge access.
+
+CI verifies file integrity and both hosts' artifact validators and templates. It does
+not establish real-host behavioral acceptance. Maintainers regenerate manifests from
+the development source before merging distribution changes.
